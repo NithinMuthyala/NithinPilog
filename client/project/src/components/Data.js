@@ -16,7 +16,17 @@ const Data = () => {
         setData(dataval)
     }
     return (
+        <>
             <h1>Data Component</h1>
+            {
+              data.length > 0 &&   data.map(each => 
+                        <div key = {each._id}>
+                        <h1>{each.title}</h1>
+                        <p>{each.description}</p>
+                        </div>
+                )
+            }
+        </>
     )
     
 }
