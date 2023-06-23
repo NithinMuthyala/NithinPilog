@@ -23,8 +23,9 @@ app.get("/",(req,res) =>  {
     res.send("Success")
 })
 
-app.get("/getdata" ,(req,res) => {
-    res.json(data.findall())
+app.get("/getdata" , async (req,res) => {
+    const datas = await data.find()
+    res.json(datas)
 })
 
 app.post("/signup" , async (req,res) => {
